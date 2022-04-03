@@ -1,44 +1,56 @@
-public class Kisi { // base class
-    private String isim;
-    private int maas;
-    private String bolum;
+public class Kisi {
+    private int id;
+    private String ad;
+    private String soyad;
+    private Adres evAdresi;
 
-    public Kisi(String isim,int maas,String bolum){
-        this.isim=isim;
-        this.maas=maas;
-        this.bolum=bolum;
-    }
-
-    public String getIsim() {
-        return isim;
+    public Kisi(int id,String ad,String soyad,Adres evAdresi){
+        this.setId(id);
+        this.setAd(ad);
+        this.setSoyad(soyad);
+        this.evAdresi=evAdresi;
     }
 
-    public void setIsim(String isim) {
-        this.isim = isim;
+    public Adres getEvAdresi(){
+        return evAdresi;
+    }
+    public void setEvAdresi(Adres evAdresi){
+        this.evAdresi=evAdresi;
     }
 
-    public int getMaas() {
-        return maas;
+    public int getId() {
+        return id;
     }
 
-    public void setMaas(int maas) {
-        this.maas = maas;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getBolum() {
-        return bolum;
+    public String getAd() {
+        return ad;
     }
 
-    public void setBolum(String bolum) {
-        this.bolum = bolum;
+    public void setAd(String ad) {
+        this.ad = ad;
     }
 
-    public void calıs(){
-        System.out.println("Çalışan sınıfı çalışıyor");
+    public String getSoyad() {
+        return soyad;
     }
-    public void  bilgileriGoster(){
-        System.out.println("İsim: "+isim);
-        System.out.println("Maas: "+maas);
-        System.out.println("Bolum: "+bolum);
+
+    public void setSoyad(String soyad) {
+        this.soyad = soyad;
     }
+
+
+    @Override
+    public String toString(){
+        return id+","+ad+","+evAdresi.getIl(); // referans tipli bir field oluşturarak o sınıf içersindeki üyelere erişim sağlandı
+    }
+
+
+
+
+
+
 }
